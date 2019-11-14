@@ -12,5 +12,6 @@ A pdf file with multiple references following the format above
 ---
 #### Disclaimer
 Progam does not work with all links, some sites don't have titles, in this case the output title will be replaced by "Sem título".
+
 ####Bugs
 - Titles with strange letters cant be reproduced in the pdf output. (can be fixed by adding a new font)

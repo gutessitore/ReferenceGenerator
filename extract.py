@@ -1,3 +1,6 @@
+from requests import get
+from bs4 import BeautifulSoup
+
 class extract(object):
 
     def __init__(self):
@@ -39,7 +42,7 @@ class extract(object):
         pass
 
     def Reference(titulo, nome, url, data):
-        reference = str(nome.upper() + ". " + titulo + ". Disponível em: " + url + ". Acesso em: " + data)
+        reference = str( nome.upper() + ". " + titulo + ". Disponível em: " + url + ". Acesso em: " + data)
         return(reference)
 
 

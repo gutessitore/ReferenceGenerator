@@ -1,5 +1,7 @@
-from requests import get
 from bs4 import BeautifulSoup
+from requests import get
+import datetime
+import random
 
 class extract(object):
 
@@ -11,7 +13,7 @@ class extract(object):
             titulo = content.title.text.strip()
         except:
             titulo = "Sem título"
-        return(titulo)
+        return titulo 
 
     def Nome(url):
         #Get name before .com or .org or .edu
@@ -37,13 +39,20 @@ class extract(object):
             
         return(nome)
 
-    def Data(start, end):
+    def Data(year):
         #format '%d %b. %Y.'
-        pass
+        date_time = datetime.datetime.strptime('{} {}'.format(random.randint(1, 366), year), '%j %Y').date()
+
+        if date_time > datetime.datetime.now().date():
+            return extract.Data(year)
+        else:
+            final = date_time.strftime("%d %b. %Y.")
+            return final
+
 
     def Reference(titulo, nome, url, data):
         reference = str( nome.upper() + ". " + titulo + ". Disponível em: " + url + ". Acesso em: " + data)
-        return(reference)
+        return reference
 
 
 

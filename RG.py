@@ -6,7 +6,7 @@ import art
 
 print("_"*30)
 art.tprint("RefG")
-print("by GuTessitore")
+print('\033[7m' + "by GuTessitore" + '\033[0m')
 print("‾"*30)
 year = input("enter a year: ")
 
@@ -30,6 +30,6 @@ for url in urls["links"]:
 		print("\n")
 
 	except:
-		print("error: page not found <", url, ">")
+		print('\033[31m' + "error: page not found <", url, ">" + '\033[0m')
 
 
